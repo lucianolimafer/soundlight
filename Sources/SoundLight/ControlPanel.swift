@@ -81,7 +81,8 @@ struct CapsuleSlider: View {
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { gesture in
-                        value = min(1, max(0, 1 - gesture.location.y / proxy.size.height))
+                        let verticalFraction = Double(gesture.location.y / proxy.size.height)
+                        value = min(1, max(0, 1 - verticalFraction))
                     }
             )
         }
