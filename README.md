@@ -26,6 +26,12 @@ https://github.com/user-attachments/assets/REPLACE_WITH_VIDEO_ID
 
 ---
 
+## Download
+
+Download the latest macOS disk image from [GitHub Releases](https://github.com/lucianolimafer/soundlight/releases/latest).
+
+Release builds currently use ad hoc code signing. Developer ID signing and Apple notarization are planned before the stable release.
+
 ## What is SoundLight?
 
 SoundLight is a lightweight macOS menu bar utility that monitors the system output volume and the built-in display brightness. When either value changes, a compact HUD appears at the corresponding edge of the screen, reflects the real system value, and then moves out of view.
@@ -88,8 +94,12 @@ Click the SoundLight icon in the menu bar to open both vertical controls. Drag a
 
 ```text
 SoundLight/
+├── .github/workflows/release.yml
+├── CHANGELOG.md
 ├── Package.swift
 ├── README.md
+├── Resources/Info.plist
+├── scripts/package-release.sh
 └── Sources/
     └── SoundLight/
         ├── ControlPanel.swift
@@ -117,7 +127,7 @@ For interactive testing, keep the app running from Xcode and alternate between v
 
 ## Roadmap
 
-- Signed release builds and downloadable installation package
+- Developer ID signing and Apple notarization
 - Optional launch at login
 - Configurable HUD size, screen edge, and dismissal delay
 - External display brightness through DDC
